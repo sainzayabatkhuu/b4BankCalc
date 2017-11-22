@@ -49,20 +49,21 @@ function chart(option) {
     var width  = parseInt(c.getAttribute("width"));
 
     var ctx=c.getContext("2d");
-
+    ctx.restore();
+    ctx.save();
     ctx.fillStyle = "#FFFFFF";
     ctx.fillRect(0, 0, width, height);
 
-    var x = 40, y = 10,cwidth = width - 65,cheight = height - 53;
+    var x = 45, y = 10,cwidth = width - 70,cheight = height - 53;
     if (option.xAxis.title.text != null) {
 
     }
     if (option.yAxis.title.text != null) {
-        x = 60;
+        x = 65;
     }
 
     ctx.fillStyle = "#FFFFFF";
-    ctx.strokeStyle = "#a1a1a1";
+    ctx.strokeStyle = "#A1A1A1";
     ctx.strokeRect(x, y, cwidth, cheight);
     ctx.fillRect(x, y, cwidth, cheight);
 
@@ -72,13 +73,13 @@ function chart(option) {
         ctx.font = '10px Arial';
         ctx.textAlign = 'right';
         ctx.textBaseline="middle";
-        ctx.fillStyle = '#a1a1a1';
-        ctx.fillText(nFormatter(YmaxPoint - YtickSpacing*i), x, (cheight/line)*i + y);
+        ctx.fillStyle = '#A1A1A1';
+        ctx.fillText(nFormatter(YmaxPoint - YtickSpacing*i) == '0'? '' : nFormatter(YmaxPoint - YtickSpacing*i), x - 10, (cheight/line)*i + y);
         if(i != 0) {
             ctx.beginPath();
             ctx.moveTo(x, (cheight/line)*i + y);
             ctx.lineTo(cwidth + x, (cheight/line)*i + y);
-            ctx.strokeStyle = '#e6e6e6';
+            ctx.strokeStyle = '#E6E6E6';
             ctx.lineWidth = 1;
             ctx.stroke();
         }
@@ -88,15 +89,15 @@ function chart(option) {
 
         ctx.font = '10px Arial';
         ctx.textAlign = 'center';
-        ctx.fillStyle = '#a1a1a1';
+        ctx.fillStyle = '#A1A1A1';
         ctx.textBaseline = 'bottom';
         var number = Math.round((XtickSpacing*i)*10)/10;
-        ctx.fillText(number,(cwidth/line)*i + x, y + cheight +15);
+        ctx.fillText(number,(cwidth/line)*i + x, y + cheight +20);
 
         ctx.beginPath();
         ctx.moveTo((cwidth/line)*i + x, y);
         ctx.lineTo((cwidth/line)*i + x, y + cheight);
-        ctx.strokeStyle = '#e6e6e6';
+        ctx.strokeStyle = '#E6E6E6';
         ctx.lineWidth = 1;
         ctx.stroke();
     }
@@ -128,7 +129,7 @@ function chart(option) {
         ctx.font = 'bold 12px Arial';
         ctx.textAlign = 'center';
         ctx.fillStyle = '#404040';
-        ctx.fillText(option.xAxis.title.text,width / 2, height - 10);
+        ctx.fillText(option.xAxis.title.text,width / 2, height - 5);
     }
     // get text y asix
     if (option.yAxis.title.text != null) {

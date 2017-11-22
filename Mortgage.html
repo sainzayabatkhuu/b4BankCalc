@@ -29,45 +29,14 @@
             padding-left: 26px;
             padding-right: 26px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph-disclaimer{
-            font-size: 10px;
-            color: #999;
-            margin-top: 10px;
-        }
         .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-main-title{
             font-size: 18px;
-        }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-form legend{
-            font-size: 16px;
-            margin-top: 13px;
-            margin-bottom: 13px;
-            font-weight: 500;
         }
         .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-form button{
             width: 45%;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-main-result{
-            margin-top: 26px;
-        }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-main-result .calculator_rent_overlay_golomt-main-result-text{
-            color: #333;
-            font-family: "f-fd0e6296b2-Museo-Sans-700","Helvetica Neue",Helvetica,Arial,sans-serif;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 1.1;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-main-result .calculator_rent_overlay_golomt-main-result-amount{
-            color: #333;
-            font-size: 59px;
-            line-height: 1.1;
-            font-family: "f-fd0e6296b2-Museo-Sans-500","Helvetica Neue",Helvetica,Arial,sans-serif;
-        }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-main-cta-block{
-            margin-top: 14px;
-        }
-        .calculator_rent_overlay_golomt-graph{
+
+        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph{
             display: block;
             position: relative;
             padding-top: 15px;
@@ -110,10 +79,10 @@
             top: 4px;
         }
         .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-total:before{
-            background: #000;
+            background: #bfbfbf;
         }
         .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-principal:before{
-            background: #ED0000;
+            background: #cb0e29;
         }
         .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-footer{
             clear: left;
@@ -130,11 +99,8 @@
             text-decoration: none;
             display: inline-block;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-footer .calculator_rent_overlay_golomt-disclaimer-toggle:hover{
-            outline: 0;
-        }
         .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-footer .calculator_rent_overlay_golomt-disclaimer-toggle:after{
-            content: 'i';
+            content: '^';
             font-size: 12px;
             font-family: 'Georgia', Helvetica, Arial, sans-serif;
             text-transform: none;
@@ -169,33 +135,51 @@
 </head>
 <body>
 
-
 <div class="calculator_rent_overlay_golomt-container">
+
     <div class="calculator_rent_overlay_golomt-header">
         <iframe src="https://sasinator.realestate.com.au/rea/hserver/viewid=93575598/site=rea/area=custom.RRC/channel=rent.homepage/kxkuid=rup6mvia6/proptype=null/state=null/random=605868351/pos=widecalc/size=728x90/" scrolling="no" width="728" height="90" frameborder="0" marginheight="0" marginwidth="0" class="reavicalc_calculator_rent_overlay_nab-ad-iframe" data-reactid=".0.0.0.0" id="geom_inter_1511229450522_80_47"></iframe>
         <a href="#" class="reavicalc_calculator_rent_overlay_nab-close" title="Close"></a>
     </div>
     <div class="calculator_rent_overlay_golomt-main">
+
+
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <h5 class="calculator_rent_overlay_golomt-main-title">Rent or Buy Calculator</h5>
-
                 <form class="calculator_rent_overlay_golomt-form">
-
-                    <legend>Your Rental Details</legend>
-
                     <div class="form-group">
                         <div class="row">
-                            <label class="col-lg-7 control-label" for="rentAmount">Monthly rent</label>
+                            <label class="col-lg-7 control-label" for="propertyPrice">Property price</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="rentAmount" type="text" name="rentAmount" class="form-control" value="430" tabindex="1">
+                                    <input id="propertyPrice" type="text" name="propertyPrice" class="form-control" value="375000" tabindex="1">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <legend>Your Loan Details</legend>
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-lg-7 control-label" for="deposit">Deposit</label>
+                            <div class="col-lg-5">
+                                <div class="input-group input-group-sm">
+                                    <input id="deposit" type="text" name="deposit" class="form-control" value="75000" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <label class="col-lg-7 control-label" for="loanAmount">Loan amount</label>
+                            <div class="col-lg-5">
+                                <div class="input-group input-group-sm">
+                                    <input id="loanAmount" type="text" name="loanAmount" class="form-control" disabled value="300000" tabindex="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="form-group">
                         <div class="row">
@@ -210,13 +194,6 @@
 
                     <div class="form-group">
                         <div class="row">
-                            <label class="col-lg-7 control-label" for="interestRate">Comparison rate (p.a.)</label>
-                            <label class="col-lg-5 control-label">5.52%</label>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="row">
                             <label class="col-lg-7 control-label" for="loanTerm">Loan term</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
@@ -226,16 +203,11 @@
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-secondary btn-sm" onclick="chart_init()">Calculate</button>
-
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="chart_init()">Re-Calculate</button>
                 </form>
-                <div class="calculator_rent_overlay_golomt-main-result">
-                    <div class="calculator_rent_overlay_golomt-main-result-text">YOUR MONTHLY RENTAL PAYMENTS COULD COVER MORTGAGE PAYMENTS FOR A LOAN OF UP TO</div>
-                    <div id="calculator_rent_overlay_golomt-main-result-amount" class="calculator_rent_overlay_golomt-main-result-amount">$28,027</div>
-                </div>
-
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
+
                 <div class="calculator_rent_overlay_golomt-graph">
                     <div class="calculator_rent_overlay_golomt-graph-key">
                         <div class="calculator_rent_overlay_golomt-graph-key-total">Total</div>
@@ -243,30 +215,38 @@
                     </div>
                 </div>
                 <div class="calculator_rent_overlay_golomt-graph-inner">
-                    <canvas id="graphic_contant" width="350" height="200"></canvas>
+                    <canvas id="graphic_contant" width="413" height="200"></canvas>
                 </div>
-                <div class="calculator_rent_overlay_golomt-graph-disclaimer">
-                    <p>This calculator is designed to show you what size loan your rental payments could service, using the interest rate you selected in the calculator.  It is not an indication of your borrowing power and has not taken into account factors that would be considered in a credit assessment if you apply for a home loan.</p>
-                </div>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-lg-5">
+                <p>Your repayments based on your details above would be</p>
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6">
-                <div class="calculator_rent_overlay_golomt-main-cta-block">
-                    <a href="http://sasinator.realestate.com.au/rea/adclick/FCID=544524/" class="btn btn-sm btn-cta" target="_blank">First Home Buyers Hub</a>
-                </div>
+            <div class="col-lg-5">
+
             </div>
-            <div class="col-lg-6">
-                <div class="calculator_rent_overlay_golomt-main-cta-block">
-                    <a href="http://sasinator.realestate.com.au/rea/adclick/FCID=544568/" class="btn btn-sm btn-cta" target="_blank" >Speak to a NAB expert</a>
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <a href="http://www.realestate.com.au/blog/news?rsf=inpage-blog-calculator" class="btn btn-sm btn-cta" target="_blank" >Property News</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <a href="http://www.realestate.com.au/blog/tips-guides?rsf=inpage-blog-calculator" class="btn btn-sm btn-cta" target="_blank" >Tips & Guides</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="calculator_rent_overlay_golomt-footer">
         <a href="#" class="calculator_rent_overlay_golomt-disclaimer-toggle">
-            <span>View Disclaimer</span>
+            <span>How this was calculated</span>
+        </a>
+        <a href="#" class="calculator_rent_overlay_golomt-disclaimer-toggle">
+            <span>Disclaimer</span>
         </a>
     </div>
 </div>
@@ -275,7 +255,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="js/chart.js"></script>
-<script src="js/rent.js"></script>
+<script src="js/mortgage.js"></script>
 
 </body>
 </html>

@@ -6,14 +6,14 @@ function chart_init() {
 };
 
 function validation(){
-    if(!isNaN(document.getElementById("rentAmount").value) || 100000 > parseInt(document.getElementById("rentAmount").value) || parseInt(document.getElementById("rentAmount").value) >= 150000000 ) {
+    if(!isNaN(document.getElementById("rentAmount").value) && 100000 > parseInt(document.getElementById("rentAmount").value) && parseInt(document.getElementById("rentAmount").value) > 150000000 ) {
         document.getElementById("rentAmount").value = '$430';
     }
-    if(!isNaN(document.getElementById("interestRate").value) || 1 > parseInt(document.getElementById("interestRate").value) || parseInt(document.getElementById("interestRate").value) >= 5.52 ) {
+    if(!isNaN(document.getElementById("interestRate").value) && 1 > parseInt(document.getElementById("interestRate").value) && parseInt(document.getElementById("interestRate").value) > 5.52 ) {
         document.getElementById("interestRate").value = '5.52%';
     }
 
-    if(!isNaN(document.getElementById("loanTerm").value) || 1 > parseInt(document.getElementById("loanTerm").value) || parseInt(document.getElementById("loanTerm").value) >= 30 ) {
+    if(!isNaN(document.getElementById("loanTerm").value) && 1 > parseInt(document.getElementById("loanTerm").value) && parseInt(document.getElementById("loanTerm").value) > 30 ) {
         document.getElementById("loanTerm").value = '30 years';
     }
 };
