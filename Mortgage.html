@@ -6,7 +6,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <style>
-        .calculator_rent_overlay_golomt-container{
+        .calculator_mortgagerepayments_overlay_golomt-container{
             width: 785px;
             max-width: 100%;
             margin: auto;
@@ -18,25 +18,50 @@
             border-radius: 2px;
             text-align: left;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-header{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-header{
             position: relative;
             padding: 26px;
             padding-bottom: 20px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main{
             position: relative;
             padding-bottom: 26px;
             padding-left: 26px;
             padding-right: 26px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-main-title{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-main-title{
             font-size: 18px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-form button{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-form button{
             width: 45%;
         }
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-main-result{
+            width: 100%;
+            float: left;
+        }
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-main-result .calculator_mortgagerepayments_overlay_golomt-main-result-amount{
+            position: relative;
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 59px;
+            padding-right: 9px;
+            font-weight: 500;
+            line-height: 1.1;
+            width: 187px;
+        }
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-main-result .calculator_mortgagerepayments_vic_only_bottom_overlay_deposit-main__result-frequency{
+            font-size: 25px;
+            text-transform: uppercase;
+            line-height: 25px;
+            display: inline-block;
+            margin-top: 0;
+            vertical-align: middle;
+            height: 50px;
+            width: 95px;
+        }
 
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph{
             display: block;
             position: relative;
             padding-top: 15px;
@@ -44,23 +69,23 @@
             padding-bottom: 0;
             padding-right: 28px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key{
             position: relative;
             top: -15px;
             margin-bottom: 10px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key{
             position: relative;
             top: -15px;
             margin-bottom: 10px;
         }
 
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph-inner{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph-inner{
             display: block;
             position: relative;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-total,
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-principal{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key .calculator_mortgagerepayments_overlay_golomt-graph-key-total,
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key .calculator_mortgagerepayments_overlay_golomt-graph-key-principal{
             display: inline-block;
             color: #333;
             font-weight: bold;
@@ -69,8 +94,8 @@
             padding-left: 15px;
             margin-right: 15px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-total:before,
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-principal:before{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key .calculator_mortgagerepayments_overlay_golomt-graph-key-total:before,
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key .calculator_mortgagerepayments_overlay_golomt-graph-key-principal:before{
             content: ' ';
             width: 10px;
             height: 10px;
@@ -78,13 +103,13 @@
             left: 0;
             top: 4px;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-total:before{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key .calculator_mortgagerepayments_overlay_golomt-graph-key-total:before{
             background: #bfbfbf;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-main .calculator_rent_overlay_golomt-graph .calculator_rent_overlay_golomt-graph-key .calculator_rent_overlay_golomt-graph-key-principal:before{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-main .calculator_mortgagerepayments_overlay_golomt-graph .calculator_mortgagerepayments_overlay_golomt-graph-key .calculator_mortgagerepayments_overlay_golomt-graph-key-principal:before{
             background: #cb0e29;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-footer{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-footer{
             clear: left;
             padding-left: 26px;
             padding-top: 11px;
@@ -92,14 +117,14 @@
             border-top: 1px solid #e3e3e3;
             position: relative;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-footer .calculator_rent_overlay_golomt-disclaimer-toggle{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-footer .calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle{
             color: #515151;
             font-size: 11px;
             text-transform: uppercase;
             text-decoration: none;
             display: inline-block;
         }
-        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-footer .calculator_rent_overlay_golomt-disclaimer-toggle:after{
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-footer .calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle:after{
             content: '^';
             font-size: 12px;
             font-family: 'Georgia', Helvetica, Arial, sans-serif;
@@ -135,25 +160,25 @@
 </head>
 <body>
 
-<div class="calculator_rent_overlay_golomt-container">
+<div class="calculator_mortgagerepayments_overlay_golomt-container">
 
-    <div class="calculator_rent_overlay_golomt-header">
-        <iframe src="https://sasinator.realestate.com.au/rea/hserver/viewid=93575598/site=rea/area=custom.RRC/channel=rent.homepage/kxkuid=rup6mvia6/proptype=null/state=null/random=605868351/pos=widecalc/size=728x90/" scrolling="no" width="728" height="90" frameborder="0" marginheight="0" marginwidth="0" class="reavicalc_calculator_rent_overlay_nab-ad-iframe" data-reactid=".0.0.0.0" id="geom_inter_1511229450522_80_47"></iframe>
-        <a href="#" class="reavicalc_calculator_rent_overlay_nab-close" title="Close"></a>
+    <div class="calculator_mortgagerepayments_overlay_golomt-header">
+        <iframe src="https://sasinator.realestate.com.au/rea/hserver/viewid=93575598/site=rea/area=custom.RRC/channel=rent.homepage/kxkuid=rup6mvia6/proptype=null/state=null/random=605868351/pos=widecalc/size=728x90/" scrolling="no" width="728" height="90" frameborder="0" marginheight="0" marginwidth="0" class="reavicalc_calculator_mortgagerepayments_overlay_nab-ad-iframe" data-reactid=".0.0.0.0" id="geom_inter_1511229450522_80_47"></iframe>
+        <a href="#" class="reavicalc_calculator_mortgagerepayments_overlay_nab-close" title="Close"></a>
     </div>
-    <div class="calculator_rent_overlay_golomt-main">
+    <div class="calculator_mortgagerepayments_overlay_golomt-main">
 
 
         <div class="row">
             <div class="col-lg-5">
-                <h5 class="calculator_rent_overlay_golomt-main-title">Rent or Buy Calculator</h5>
-                <form class="calculator_rent_overlay_golomt-form">
+                <h5 class="calculator_mortgagerepayments_overlay_golomt-main-title">Rent or Buy Calculator</h5>
+                <form class="calculator_mortgagerepayments_overlay_golomt-form">
                     <div class="form-group">
                         <div class="row">
                             <label class="col-lg-7 control-label" for="propertyPrice">Property price</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="propertyPrice" type="text" name="propertyPrice" class="form-control" value="375000" tabindex="1">
+                                    <input id="propertyPrice" type="text" name="propertyPrice" class="form-control" value="375000" tabindex="1" onblur="propertyPriceValidation();">
                                 </div>
                             </div>
                         </div>
@@ -164,7 +189,7 @@
                             <label class="col-lg-7 control-label" for="deposit">Deposit</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="deposit" type="text" name="deposit" class="form-control" value="75000" tabindex="1">
+                                    <input id="deposit" type="text" name="deposit" class="form-control" value="75000" tabindex="1" onblur="depositValidation();">
                                 </div>
                             </div>
                         </div>
@@ -186,7 +211,7 @@
                             <label class="col-lg-7 control-label" for="interestRate">Interest rate (p.a.)</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43" tabindex="1">
+                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43" tabindex="1" onblur="rateValidation();">
                                 </div>
                             </div>
                         </div>
@@ -197,7 +222,7 @@
                             <label class="col-lg-7 control-label" for="loanTerm">Loan term</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30" tabindex="1">
+                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30" tabindex="1" onblur="loanTermValidation();">
                                 </div>
                             </div>
                         </div>
@@ -208,13 +233,13 @@
             </div>
             <div class="col-lg-7">
 
-                <div class="calculator_rent_overlay_golomt-graph">
-                    <div class="calculator_rent_overlay_golomt-graph-key">
-                        <div class="calculator_rent_overlay_golomt-graph-key-total">Total</div>
-                        <div class="calculator_rent_overlay_golomt-graph-key-principal">Principal</div>
+                <div class="calculator_mortgagerepayments_overlay_golomt-graph">
+                    <div class="calculator_mortgagerepayments_overlay_golomt-graph-key">
+                        <div class="calculator_mortgagerepayments_overlay_golomt-graph-key-total">Total</div>
+                        <div class="calculator_mortgagerepayments_overlay_golomt-graph-key-principal">Principal</div>
                     </div>
                 </div>
-                <div class="calculator_rent_overlay_golomt-graph-inner">
+                <div class="calculator_mortgagerepayments_overlay_golomt-graph-inner">
                     <canvas id="graphic_contant" width="413" height="200"></canvas>
                 </div>
             </div>
@@ -227,7 +252,15 @@
         </div>
         <div class="row">
             <div class="col-lg-5">
-
+                <div class="calculator_mortgagerepayments_overlay_golomt-main-result">
+                    <div class="calculator_mortgagerepayments_overlay_golomt-main-result-amount">
+                        <span id="calculator_mortgagerepayments_overlay_golomt-main-result-amount">$0</span>
+                    </div>
+                    <div class="calculator_mortgagerepayments_vic_only_bottom_overlay_deposit-main__result-frequency">
+                        <span>PER</span>
+                        <span>MONTH</span>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-7">
                 <div class="row">
@@ -241,11 +274,11 @@
             </div>
         </div>
     </div>
-    <div class="calculator_rent_overlay_golomt-footer">
-        <a href="#" class="calculator_rent_overlay_golomt-disclaimer-toggle">
+    <div class="calculator_mortgagerepayments_overlay_golomt-footer">
+        <a href="#" class="calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle">
             <span>How this was calculated</span>
         </a>
-        <a href="#" class="calculator_rent_overlay_golomt-disclaimer-toggle">
+        <a href="#" class="calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle">
             <span>Disclaimer</span>
         </a>
     </div>

@@ -108,10 +108,9 @@ function chart(option) {
 
         for (var a=0;a < option.series[i].data.length; a++) {
             var tempx = (cwidth*option.series[i].data[a]['x'])/XmaxPoint+x;
-            //alert(option.series[i].data[a]['y']);
 
             var tempy = (cheight*option.series[i].data[a]['y'])/YmaxPoint;
-            tempy = (cheight - tempy) + y;
+            tempy = (cheight - tempy)+y;
             ctx.lineTo(tempx, tempy);
         }
         ctx.lineTo(x + (Xmax*cwidth)/XmaxPoint,y + cheight);

@@ -173,7 +173,7 @@
 <div class="calculator_rent_overlay_golomt-container">
     <div class="calculator_rent_overlay_golomt-header">
         <iframe src="https://sasinator.realestate.com.au/rea/hserver/viewid=93575598/site=rea/area=custom.RRC/channel=rent.homepage/kxkuid=rup6mvia6/proptype=null/state=null/random=605868351/pos=widecalc/size=728x90/" scrolling="no" width="728" height="90" frameborder="0" marginheight="0" marginwidth="0" class="reavicalc_calculator_rent_overlay_nab-ad-iframe" data-reactid=".0.0.0.0" id="geom_inter_1511229450522_80_47"></iframe>
-        <a href="#" class="reavicalc_calculator_rent_overlay_nab-close" title="Close"></a>
+        <a href="#" class="reavicalc_calculator_rent_overlay_golomt-close" title="Close"></a>
     </div>
     <div class="calculator_rent_overlay_golomt-main">
         <div class="row">
@@ -189,7 +189,7 @@
                             <label class="col-lg-7 control-label" for="rentAmount">Monthly rent</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="rentAmount" type="text" name="rentAmount" class="form-control" value="430" tabindex="1">
+                                    <input id="rentAmount" type="text" name="rentAmount" class="form-control" value="1235" tabindex="1" onblur="rentAmountValidation();">
                                 </div>
                             </div>
                         </div>
@@ -202,7 +202,7 @@
                             <label class="col-lg-7 control-label" for="interestRate">Interest rate (p.a.)</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43" tabindex="1">
+                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43" tabindex="1" onblur="rateValidation();">
                                 </div>
                             </div>
                         </div>
@@ -220,7 +220,7 @@
                             <label class="col-lg-7 control-label" for="loanTerm">Loan term</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30" tabindex="1">
+                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30" tabindex="1" onblur="loanTermValidation();">
                                 </div>
                             </div>
                         </div>
