@@ -147,6 +147,21 @@
             float: right;
             margin-left: 7px;
         }
+        .calculator_rent_overlay_golomt-container .calculator_rent_overlay_golomt-footer .calculator_rent_overlay_golomt-disclaimer-body{
+            color: #515151;
+            border: 1px solid #999;
+            position: absolute;
+            bottom: 39px;
+            left: 13px;
+            width: 270px;
+            background: #fff;
+            padding: 10px 12px;
+            font-size: 13px;
+            height: 295px;
+            overflow-y: scroll;
+            z-index: 30;
+            border-radius: 0;
+        }
         .btn-cta{
             font-size: 15px;
             font-family: "f-fd0e6296b2-Museo-Sans-500","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -164,6 +179,14 @@
         }
         a.btn-cta:hover{
             color: #fff;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button
+        {
+            -webkit-appearance: none;
+            margin: 0;
+            display: none;
         }
     </style>
 </head>
@@ -189,7 +212,7 @@
                             <label class="col-lg-7 control-label" for="rentAmount">Monthly rent</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="rentAmount" type="text" name="rentAmount" class="form-control" value="1235" tabindex="1" onblur="rentAmountValidation();">
+                                    <input id="rentAmount" type="text" name="rentAmount" class="form-control" value="$1,235" tabindex="1" onfocus="rentAmountOnFocus();" onblur="rentAmountValidation();">
                                 </div>
                             </div>
                         </div>
@@ -202,7 +225,7 @@
                             <label class="col-lg-7 control-label" for="interestRate">Interest rate (p.a.)</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43" tabindex="1" onblur="rateValidation();">
+                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43 %" tabindex="1" onfocus="rateOnFocus();" onblur="rateValidation();">
                                 </div>
                             </div>
                         </div>
@@ -220,7 +243,7 @@
                             <label class="col-lg-7 control-label" for="loanTerm">Loan term</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30" tabindex="1" onblur="loanTermValidation();">
+                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30 years" tabindex="1" onfocus="loanTermOnFocus();" onblur="loanTermValidation();">
                                 </div>
                             </div>
                         </div>
@@ -265,9 +288,21 @@
         </div>
     </div>
     <div class="calculator_rent_overlay_golomt-footer">
-        <a href="#" class="calculator_rent_overlay_golomt-disclaimer-toggle">
+        <a href="#" class="calculator_rent_overlay_golomt-disclaimer-toggle" id="calculator_rent_overlay_golomt-disclaimer-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>View Disclaimer</span>
         </a>
+
+        <div class="dropdown-menu calculator_rent_overlay_golomt-disclaimer-body" aria-labelledby="calculator_rent_overlay_golomt-disclaimer-toggle">
+            <p>The results from this calculator should be used as an indication only. Results do not represent either quotes or pre-qualifications for a loan. The specific details of your loan will be provided to you in your loan contract. It is advised that you consult your financial adviser before taking out a loan.</p>
+
+            <p>The calculations do not take into account any fees and charges, e.g. application fees. The results provided by these calculators are an approximate guide only, and are not specific to NAB home loans. These calculators, or the results generated, do not constitute any agreement by NAB to provide credit.</p>
+
+            <p>This calculator is designed to show you what size loan your rental payments would service, at the interest rate that you have selected in the tool. It does not take into account other factors such as your income, other debt repayments, general living expenses and other credit assessment criteria (including serviceability assessment). It is not designed to provide an indication of borrowing power or loan approval. Lending by NAB is subject to NAB\'s normal lending criteria.</p>
+
+            <p>The default monthly rent amount of $1,235 has been used as it represents the median monthly rent in Australia from the 2011 census. Interest rate quoted is NAB’s standard variable rate as at May 26, 2015. The default loan term of 30 years represents the longest loan term NAB may offer as part of its home loan products.</p>
+
+            <p>Terms, conditions, fees, charges and eligibility criteria apply. Comparison rates are based on a loan of $150,000 over a term of 25 years WARNING: This comparison rate applies only to the example or examples given. Different amounts and terms will result in different comparison rates. Costs such as redraw fees or early repayment fees, and cost savings such as fee waivers, are not included in the comparison rate but may influence the cost of the loan.</p>
+        </div>
     </div>
 </div>
 

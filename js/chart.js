@@ -176,14 +176,20 @@ function formatMoney(num){
     return (p[0].split("").reverse().reduce(function(acc, num, i, orig) {
         return  num + (i && !(i % 3) ? "," : "") + acc;
     }, "") + "." + p[1]).replace('.00','');
-}
+};
+function formatMoneyWithoutFixed(num){
+    var p = num.toString().split(".");
+    return (p[0].split("").reverse().reduce(function(acc, num, i, orig) {
+        return  num + (i && !(i % 3) ? "," : "") + acc;
+    }, ""));
+};
 
 function splitString(stringToSplit, separator) {
     var arrayOfStrings = stringToSplit.split(separator);
     if (arrayOfStrings.length == 1)
         arrayOfStrings[1] = '00₮';
     return arrayOfStrings;
-}
+};
 //Энэ урт хэмжээний тоог байгасгаж үсгээр орлуулж байгаа хэсэг
 function nFormatter(num) {
     if (num >= 1000000000) {
@@ -196,4 +202,4 @@ function nFormatter(num) {
         return (num / 1000).toFixed(1) + 'K';
     }
     return num;
-}
+};

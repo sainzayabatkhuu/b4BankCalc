@@ -4,30 +4,27 @@ function chart_init() {
     calculator();
 };
 
-function propertyPriceValidation() {
-    if(15000 > parseFloat(document.getElementById("propertyPrice").value.replace('$', ''))) {
-        document.getElementById("propertyPrice").value = '$15000';
-    }
-    if(parseFloat(document.getElementById("propertyPrice").value.replace('$', '')) > 150000000 ) {
-        document.getElementById("propertyPrice").value = '$50000000';
-    }
-    if( ((parseFloat(document.getElementById("propertyPrice").value.replace('$', '')) * 80) / 100) < parseFloat(document.getElementById("deposit").value.replace('$', '')) ) {
-        document.getElementById("deposit").value = '$'+((parseFloat(document.getElementById("propertyPrice").value.replace('$', '')) * 80) / 100);
-    }
-    document.getElementById("loanAmount").value = '$' + ( parseFloat(document.getElementById("propertyPrice").value.replace('$', '')) - parseFloat(document.getElementById("deposit").value.replace('$', '')) );
+function propertyPriceOnFocus() {
+    document.getElementById("propertyPrice").value = document.getElementById("propertyPrice").value.replace('$', '').replace(',', '');
 };
 
-function depositValidation() {
-    if(document.getElementById("deposit").value == '') {
-        document.getElementById("deposit").value = '$0';
-    }
-    if( ((parseFloat(document.getElementById("propertyPrice").value.replace('$', '')) * 80) / 100) < parseFloat(document.getElementById("deposit").value.replace('$', '')) ) {
-        document.getElementById("deposit").value = '$'+((parseFloat(document.getElementById("propertyPrice").value.replace('$', '')) * 80) / 100);
-    }
-    document.getElementById("loanAmount").value = '$' + ( parseFloat(document.getElementById("propertyPrice").value.replace('$', '')) - parseFloat(document.getElementById("deposit").value.replace('$', '')) );
+function depositOnFocus() {
+    document.getElementById("deposit").value = document.getElementById("deposit").value.replace('$', '').replace(',', '');
+};
+
+function rateOnFocus() {
+    document.getElementById("interestRate").value = document.getElementById("interestRate").value.replace('%', '').replace(' ', '');
+};
+
+function loanTermOnFocus() {
+    document.getElementById("loanTerm").value = parseInt(document.getElementById("loanTerm").value.replace('years', '').replace(' ', ''));
+
 };
 
 function rateValidation() {
+
+    var p = document.getElementById("interestRate").value.replace('%', '').replace(' ', '').split(".");
+    document.getElementById("interestRate").value = p[0]+'.'+ p[1] + ' %';
     // for Rate
     if(isNaN(document.getElementById("interestRate").value.replace('%', ''))) {
         document.getElementById("interestRate").value = '0.01 %';
@@ -41,19 +38,56 @@ function rateValidation() {
 };
 
 function loanTermValidation() {
-    if(1 > parseInt(document.getElementById("loanTerm").value.replace('years', ''))) {
+    // this is getting only number;
+    document.getElementById("loanTerm").value = parseInt(document.getElementById("loanTerm").value.match(/\d+/) == null ? '1' :document.getElementById("loanTerm").value.match(/\d+/)[0]);
+
+    if(document.getElementById("loanTerm").value == '1') {
+        document.getElementById("loanTerm").value = document.getElementById("loanTerm").value + ' year';
+    } else {
+        document.getElementById("loanTerm").value = document.getElementById("loanTerm").value + ' years';
+    }
+    if(1 > parseInt(document.getElementById("loanTerm").value.replace('years', '').replace(' ', ''))) {
         document.getElementById("loanTerm").value = '1 years';
     }
-    if(parseInt(document.getElementById("loanTerm").value.replace('years', '')) > 30 ) {
+    if(parseInt(document.getElementById("loanTerm").value.replace('years', '').replace(' ', '')) > 30 ) {
         document.getElementById("loanTerm").value = '30 years';
     }
 };
 
+function propertyPriceValidation() {
+    // this is getting only number;
+    document.getElementById("propertyPrice").value = document.getElementById("propertyPrice").value.match(/\d+/) == null ? '15000' : document.getElementById("propertyPrice").value.match(/\d+/)[0];
+    document.getElementById("propertyPrice").value = '$'+ formatMoneyWithoutFixed(document.getElementById("propertyPrice").value);
+
+    if(15000 > parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', ''))) {
+        document.getElementById("propertyPrice").value = '$15,000';
+    }
+    if(parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', '')) > 150000000 ) {
+        document.getElementById("propertyPrice").value = '$50,000,000';
+    }
+    if( ((parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', '')) * 80) / 100) < parseFloat(document.getElementById("deposit").value.replace('$', '').replace(',', '')) ) {
+        document.getElementById("deposit").value = '$'+((parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', '')) * 80) / 100);
+    }
+    document.getElementById("loanAmount").value = '$' + formatMoneyWithoutFixed( parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', '')) - parseFloat(document.getElementById("deposit").value.replace('$', '').replace(',', '')) );
+};
+
+function depositValidation() {
+    document.getElementById("deposit").value = document.getElementById("deposit").value.match(/\d+/) == null ? '0' : document.getElementById("deposit").value.match(/\d+/)[0];
+    document.getElementById("deposit").value = '$'+ formatMoneyWithoutFixed(document.getElementById("deposit").value);
+    if(document.getElementById("deposit").value == '') {
+        document.getElementById("deposit").value = '$0';
+    }
+    if( ((parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', '')) * 80) / 100) < parseFloat(document.getElementById("deposit").value.replace('$', '').replace(',', '')) ) {
+        document.getElementById("deposit").value = '$'+((parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', '')) * 80) / 100);
+    }
+    document.getElementById("loanAmount").value = '$' + formatMoneyWithoutFixed( parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', '')) - parseFloat(document.getElementById("deposit").value.replace('$', '').replace(',', '')) );
+};
+
 function validation(){
-    if(!isNaN(document.getElementById("deposit").value.replace('$', '')) && 100000 > parseInt(document.getElementById("deposit").value.replace('$', '')) && parseInt(document.getElementById("deposit").value.replace('$', '')) > 150000000 ) {
+    if(!isNaN(document.getElementById("deposit").value.replace('$', '').replace(',', '')) && 100000 > parseInt(document.getElementById("deposit").value.replace('$', '').replace(',', '')) && parseInt(document.getElementById("deposit").value.replace('$', '').replace(',', '')) > 150000000 ) {
         document.getElementById("deposit").value = '$75000';
     }
-    if(!isNaN(document.getElementById("loanAmount").value.replace('$', '')) && 100000 > parseInt(document.getElementById("loanAmount").value.replace('$', '')) && parseInt(document.getElementById("loanAmount").value.replace('$', '')) > 150000000 ) {
+    if(!isNaN(document.getElementById("loanAmount").value.replace('$', '').replace(',', '')) && 100000 > parseInt(document.getElementById("loanAmount").value.replace('$', '').replace(',', '')) && parseInt(document.getElementById("loanAmount").value.replace('$', '').replace(',', '')) > 150000000 ) {
         document.getElementById("loanAmount").value = '$300000';
     }
 };
@@ -61,9 +95,9 @@ function validation(){
 function calculator() {
 
     /*  */
-    var propertyPrice    = parseFloat(document.getElementById("propertyPrice").value.replace('$', ''));
-    var deposit    = parseFloat(document.getElementById("deposit").value.replace('$', ''));
-    var amount    = parseFloat(document.getElementById("loanAmount").value.replace('$', ''));
+    var propertyPrice    = parseFloat(document.getElementById("propertyPrice").value.replace('$', '').replace(',', ''));
+    var deposit    = parseFloat(document.getElementById("deposit").value.replace('$', '').replace(',', ''));
+    var amount    = parseFloat(document.getElementById("loanAmount").value.replace('$', '').replace(',', ''));
     var rate      = parseFloat(document.getElementById("interestRate").value.replace('%', '')) / 100 / 365;
     var time      = parseFloat(document.getElementById("loanTerm").value.replace(' years', '')) * 12;
     var mounth    = 365/12;

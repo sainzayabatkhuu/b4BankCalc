@@ -4,16 +4,34 @@ function chart_init() {
     calculator();
 };
 
+function rentAmountOnFocus() {
+    document.getElementById("rentAmount").value = document.getElementById("rentAmount").value.replace('$', '').replace(',', '');
+};
+
+function rateOnFocus() {
+    document.getElementById("interestRate").value = document.getElementById("interestRate").value.replace('%', '').replace(' ', '');
+};
+
+function loanTermOnFocus() {
+    document.getElementById("loanTerm").value = parseInt(document.getElementById("loanTerm").value.replace('years', '').replace(' ', ''));
+
+};
+
 function rentAmountValidation() {
-    if(430 > parseFloat(document.getElementById("rentAmount").value.replace('$', ''))) {
+    document.getElementById("rentAmount").value = document.getElementById("rentAmount").value.match(/\d+/) == null ? '430' : document.getElementById("rentAmount").value.match(/\d+/)[0];
+    document.getElementById("rentAmount").value = '$'+ formatMoneyWithoutFixed(document.getElementById("rentAmount").value);
+
+    if(430 > parseFloat(document.getElementById("rentAmount").value.replace('$', '').replace(',', ''))) {
         document.getElementById("rentAmount").value = '$430';
     }
-    if(parseFloat(document.getElementById("rentAmount").value.replace('$', '')) > 150000000 ) {
+    if(parseFloat(document.getElementById("rentAmount").value.replace('$', '').replace(',', '')) > 150000000 ) {
         document.getElementById("rentAmount").value = '$50000000';
     }
 };
 
 function rateValidation() {
+    var p = document.getElementById("interestRate").value.replace('%', '').replace(' ', '').split(".");
+    document.getElementById("interestRate").value = p[0]+'.'+ p[1] + ' %';
     // for Rate
     if(isNaN(document.getElementById("interestRate").value.replace('%', ''))) {
         document.getElementById("interestRate").value = '0.01 %';
@@ -27,11 +45,18 @@ function rateValidation() {
 };
 
 function loanTermValidation() {
+    // this is getting only number;
+    document.getElementById("loanTerm").value = parseInt(document.getElementById("loanTerm").value.match(/\d+/) == null ? '1' :document.getElementById("loanTerm").value.match(/\d+/)[0]);
 
-    if(1 > parseInt(document.getElementById("loanTerm").value.replace('years', ''))) {
+    if(document.getElementById("loanTerm").value == '1') {
+        document.getElementById("loanTerm").value = document.getElementById("loanTerm").value + ' year';
+    } else {
+        document.getElementById("loanTerm").value = document.getElementById("loanTerm").value + ' years';
+    }
+    if(1 > parseInt(document.getElementById("loanTerm").value.replace('years', '').replace(' ', ''))) {
         document.getElementById("loanTerm").value = '1 years';
     }
-    if(parseInt(document.getElementById("loanTerm").value.replace('years', '')) > 30 ) {
+    if(parseInt(document.getElementById("loanTerm").value.replace('years', '').replace(' ', '')) > 30 ) {
         document.getElementById("loanTerm").value = '30 years';
     }
 };
@@ -39,7 +64,7 @@ function loanTermValidation() {
 function calculator() {
 
     /*  */
-    var amount    = parseFloat(document.getElementById("rentAmount").value.replace('$', ''));
+    var amount    = parseFloat(document.getElementById("rentAmount").value.replace('$', '').replace(',', ''));
     //var rate      = parseFloat(document.getElementById("interestRate").value.replace('%', '')) / 100;
     var rate      = (parseFloat(document.getElementById("interestRate").value.replace('%', '')) / 100 / 365);
     var time      = parseFloat(document.getElementById("loanTerm").value.replace(' years', '')) * 12;

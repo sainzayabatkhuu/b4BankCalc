@@ -138,6 +138,22 @@
             float: right;
             margin-left: 7px;
         }
+
+        .calculator_mortgagerepayments_overlay_golomt-container .calculator_mortgagerepayments_overlay_golomt-footer .calculator_mortgagerepayments_vic_only_bottom_overlay_deposit-disclaimer-body{
+            color: #515151;
+            border: 1px solid #999;
+            position: absolute;
+            bottom: 39px;
+            left: 13px;
+            width: 270px;
+            background: #fff;
+            padding: 10px 12px;
+            font-size: 13px;
+            height: 295px;
+            overflow-y: scroll;
+            z-index: 30;
+            border-radius: 0;
+        }
         .btn-cta{
             font-size: 15px;
             font-family: "f-fd0e6296b2-Museo-Sans-500","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -171,14 +187,14 @@
 
         <div class="row">
             <div class="col-lg-5">
-                <h5 class="calculator_mortgagerepayments_overlay_golomt-main-title">Rent or Buy Calculator</h5>
+                <h5 class="calculator_mortgagerepayments_overlay_golomt-main-title">Your Loan Details</h5>
                 <form class="calculator_mortgagerepayments_overlay_golomt-form">
                     <div class="form-group">
                         <div class="row">
                             <label class="col-lg-7 control-label" for="propertyPrice">Property price</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="propertyPrice" type="text" name="propertyPrice" class="form-control" value="375000" tabindex="1" onblur="propertyPriceValidation();">
+                                    <input id="propertyPrice" type="text" name="propertyPrice" class="form-control" value="$375,000" tabindex="1" onfocus="propertyPriceOnFocus();" onblur="propertyPriceValidation();">
                                 </div>
                             </div>
                         </div>
@@ -189,7 +205,7 @@
                             <label class="col-lg-7 control-label" for="deposit">Deposit</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="deposit" type="text" name="deposit" class="form-control" value="75000" tabindex="1" onblur="depositValidation();">
+                                    <input id="deposit" type="text" name="deposit" class="form-control" value="$75,000" tabindex="2" onfocus="depositOnFocus();" onblur="depositValidation();">
                                 </div>
                             </div>
                         </div>
@@ -200,7 +216,7 @@
                             <label class="col-lg-7 control-label" for="loanAmount">Loan amount</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="loanAmount" type="text" name="loanAmount" class="form-control" disabled value="300000" tabindex="1">
+                                    <input id="loanAmount" type="text" name="loanAmount" class="form-control" disabled value="$300,000" tabindex="3">
                                 </div>
                             </div>
                         </div>
@@ -211,7 +227,7 @@
                             <label class="col-lg-7 control-label" for="interestRate">Interest rate (p.a.)</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43" tabindex="1" onblur="rateValidation();">
+                                    <input id="interestRate" type="text" name="interestRate" class="form-control" value="5.43 %" tabindex="4" onfocus="rateOnFocus();" onblur="rateValidation();">
                                 </div>
                             </div>
                         </div>
@@ -222,13 +238,13 @@
                             <label class="col-lg-7 control-label" for="loanTerm">Loan term</label>
                             <div class="col-lg-5">
                                 <div class="input-group input-group-sm">
-                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30" tabindex="1" onblur="loanTermValidation();">
+                                    <input id="loanTerm" type="text" name="loanTerm" class="form-control" value="30 years" tabindex="5" onfocus="loanTermOnFocus();" onblur="loanTermValidation();">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <button type="button" class="btn btn-secondary btn-sm" onclick="chart_init()">Re-Calculate</button>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="chart_init()" tabindex="6">Re-Calculate</button>
                 </form>
             </div>
             <div class="col-lg-7">
@@ -265,22 +281,37 @@
             <div class="col-lg-7">
                 <div class="row">
                     <div class="col-lg-6">
-                        <a href="http://www.realestate.com.au/blog/news?rsf=inpage-blog-calculator" class="btn btn-sm btn-cta" target="_blank" >Property News</a>
+                        <a href="http://www.realestate.com.au/blog/news?rsf=inpage-blog-calculator" class="btn btn-sm btn-cta" target="_blank" tabindex="7">Property News</a>
                     </div>
                     <div class="col-lg-6">
-                        <a href="http://www.realestate.com.au/blog/tips-guides?rsf=inpage-blog-calculator" class="btn btn-sm btn-cta" target="_blank" >Tips & Guides</a>
+                        <a href="http://www.realestate.com.au/blog/tips-guides?rsf=inpage-blog-calculator" class="btn btn-sm btn-cta" target="_blank" tabindex="8">Tips & Guides</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="calculator_mortgagerepayments_overlay_golomt-footer">
-        <a href="#" class="calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle">
+        <a href="#" class="calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle" tabindex="9" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>How this was calculated</span>
         </a>
-        <a href="#" class="calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle">
+        <a href="#" class="calculator_mortgagerepayments_overlay_golomt-disclaimer-toggle" tabindex="10" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>Disclaimer</span>
         </a>
+
+        <div class="dropdown-menu calculator_mortgagerepayments_vic_only_bottom_overlay_deposit-disclaimer-body" aria-labelledby="dropdownMenuButton1">
+            <p><strong>Calculations</strong></p>
+            <p>If no price is displayed for this property, we have displayed the property price that falls in the middle of the total number of properties matching your selected bedrooms and suburb sold over the proceeding 12 months.</p>
+            <p>The amount in ‘deposit’ field is based on 20% of advertised or estimated property value.</p>
+            <p>The amount in ‘loan amount’ field reflects the advertised or estimated property value minus the deposit amount.</p>
+            <p>Data current as of 29 February 2016.</p>
+            <p>Data supplied by RP Data Pty Ltd trading as CoreLogic.</p>
+            <p><strong>Copyright</strong></p>
+            <p>Information on this page is a combination of data sourced from realestate.com.au and RP Data. Data obtained by RP Data is subject to the following copyright: © 2015 Copyright RP Data Pty Ltd trading as CoreLogic (CoreLogic), Local, State, and Commonwealth Governments. All rights reserved. No reproduction, publication, adaption, modification, public communication, distribution or transmission of the copyrighted materials in this publication is permitted whether in whole or in part. The copyrighted materials in this publication are provided for personal or internal business purposes only unless otherwise agreed in writing. The information provided in this publication is current as at the publication date only. CoreLogic does not warrant accuracy or completeness in the information it supplies and to the full extent allowed by law excludes any liability for any loss or damage arising from or in connection with the supply or use of the whole or any part of the information in this publication through any cause whatsoever and limits any liability it may have to the amount paid to CoreLogic for the supply of such information. The State of Victoria owns the copyright in the Property Sales Data and reproduction of that data in any way without the consent of the State of Victoria will constitute a breach of the Copyright Act 1968 (Cth). The State of Victoria does not warrant the accuracy or completeness of the Property Sales Data and any person using or relying upon such information does so on the basis that the State of Victoria accepts no responsibility or liability whatsoever for any errors, faults, defects or omissions in the information supplied</p>
+        </div>
+
+        <div class="dropdown-menu calculator_mortgagerepayments_vic_only_bottom_overlay_deposit-disclaimer-body" aria-labelledby="dropdownMenuButton2">
+            The results from these calculators are an approximate guide only. These calculators, or the results generated, do not constitute any agreement by any lender to provide credit. The calculations do not take into account any fees and charges that a lender may levy. REA Group Ltd, realestate.com.au Pty Ltd and their affiliated companies (REA) are not responsible for the calculator or its calculations and make no representations either expressly or impliedly concerning the calculator or calculations. REA accepts no liability whatsoever in relation to the calculator or calculations.
+        </div>
     </div>
 </div>
 
