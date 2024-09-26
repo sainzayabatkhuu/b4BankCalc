@@ -9,7 +9,9 @@ This is a simple web-based calculator that helps users calculate their rent and 
 
 ## Demo
 
-[Link to live demo](#) (Replace this with your demo link if available)
+[Personal Loan Repayments](https://htmlpreview.github.io/?https://github.com/Ghost0817/b4BankCalc/blob/master/Mortgage.html)
+
+[Savings Plan Calculator](https://htmlpreview.github.io/?https://github.com/Ghost0817/b4BankCalc/blob/master/RentCalc.html)
 
 ## Technologies Used
 - **HTML5**: Structure of the page.
